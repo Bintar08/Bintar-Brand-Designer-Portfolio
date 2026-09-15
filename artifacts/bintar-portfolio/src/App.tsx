@@ -1,6 +1,7 @@
 import { type ReactNode, useEffect, useRef, useState } from 'react';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { ArrowDown, ArrowUpRight, Asterisk, Instagram, Mail, Menu, X } from 'lucide-react';
+import profileImage from '@assets/profile_me_1789444181030.jpg';
 import { ErrorBoundary } from '@/components/error-boundary';
 import { Toaster } from '@/components/ui/toaster';
 import { TooltipProvider } from '@/components/ui/tooltip';
@@ -162,15 +163,29 @@ function About() {
           <p className="font-mono-custom text-[10px] uppercase tracking-[0.2em] text-background/60">01 / About me</p>
           <Asterisk className="text-accent" size={20} />
         </Reveal>
-        <div className="grid gap-16 lg:grid-cols-[minmax(200px,1fr)_2fr] lg:gap-20">
+        <div className="grid gap-14 lg:grid-cols-[minmax(260px,0.8fr)_2fr] lg:items-start lg:gap-20">
           <Reveal delay="reveal-delay-1">
-            <p className="max-w-[240px] font-mono-custom text-[10px] uppercase leading-[1.6] tracking-[0.15em] text-background/60">A curious eye for the details that make a thing feel like itself.</p>
-            <div className="mt-20 hidden text-[11rem] font-bold leading-none text-accent/90 lg:block">B.</div>
+            <p className="mb-7 max-w-[260px] font-mono-custom text-[10px] uppercase leading-[1.6] tracking-[0.15em] text-background/60">A curious eye for the details that make a thing feel like itself.</p>
+            <figure className="max-w-[330px]">
+              <div className="relative aspect-[4/5] overflow-hidden bg-background/10">
+                <img
+                  src={profileImage}
+                  alt="Bintar, brand identity and logo designer based in Yogyakarta"
+                  className="h-full w-full object-cover object-center grayscale-[12%] transition-transform duration-700 hover:scale-[1.03]"
+                />
+                <span className="absolute bottom-3 left-3 bg-foreground/80 px-2 py-1 font-mono-custom text-[9px] uppercase tracking-[0.15em] text-background">Bintar / Yogyakarta</span>
+              </div>
+              <figcaption className="mt-3 flex justify-between font-mono-custom text-[9px] uppercase tracking-[0.15em] text-background/45">
+                <span>Portrait</span>
+                <span>01—24</span>
+              </figcaption>
+            </figure>
           </Reveal>
           <Reveal delay="reveal-delay-2">
-            <p data-testid="text-about-copy" className="max-w-4xl font-display text-[clamp(2.2rem,5.1vw,5.4rem)] font-medium leading-[.98] tracking-[-0.07em]">
+            <p data-testid="text-about-copy" className="max-w-4xl font-display text-[clamp(2.15rem,4.55vw,4.8rem)] font-medium leading-[1.01] tracking-[-0.065em]">
               I’m Bintar, a logo brand identity and logo designer based in Yogyakarta, Indonesia, working independently with founders, teams, and the occasional dreamer. My approach is collaborative, curious, and grounded in the belief that a strong brand should feel unmistakably yours — not like a trend report in disguise.
             </p>
+            <p className="mt-8 max-w-sm text-sm leading-relaxed text-background/60 md:ml-auto md:mt-12">The work starts with listening closely, then finding the clearest and most honest way to make a brand recognizable.</p>
           </Reveal>
         </div>
         <Reveal className="mt-24 grid border-t border-background/25 pt-6 md:grid-cols-3" delay="reveal-delay-3">
