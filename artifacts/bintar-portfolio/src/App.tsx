@@ -157,16 +157,16 @@ function Hero() {
 
 function About() {
   return (
-    <section id="about" className="bg-foreground px-5 py-24 text-background md:px-10 md:py-36">
+    <section id="about" className="bg-foreground px-5 py-20 text-background md:px-10 md:py-24">
       <div className="mx-auto max-w-[1400px]">
-        <Reveal className="mb-16 flex items-center justify-between border-b border-background/25 pb-5">
+        <Reveal className="mb-12 flex items-center justify-between border-b border-background/25 pb-5">
           <p className="font-mono-custom text-[10px] uppercase tracking-[0.2em] text-background/60">01 / About me</p>
           <Asterisk className="text-accent" size={20} />
         </Reveal>
-        <div className="grid gap-14 lg:grid-cols-[minmax(260px,0.8fr)_2fr] lg:items-stretch lg:gap-20">
+        <div className="grid gap-12 lg:grid-cols-[260px_minmax(0,1fr)] lg:items-stretch lg:gap-16">
           <Reveal delay="reveal-delay-1">
             <p className="mb-7 max-w-[260px] font-mono-custom text-[10px] uppercase leading-[1.6] tracking-[0.15em] text-background/60">A curious eye for the details that make a thing feel like itself.</p>
-            <figure className="max-w-[330px]">
+            <figure className="max-w-[330px] lg:max-w-[260px]">
               <div className="relative aspect-[4/5] overflow-hidden bg-background/10">
                 <img
                   src={profileImage}
@@ -181,14 +181,14 @@ function About() {
               </figcaption>
             </figure>
           </Reveal>
-          <Reveal delay="reveal-delay-2" className="lg:flex lg:min-h-[500px] lg:flex-col lg:justify-center">
+          <Reveal delay="reveal-delay-2" className="lg:flex lg:min-h-[380px] lg:flex-col lg:justify-center">
             <p data-testid="text-about-copy" className="max-w-[650px] font-display text-[12px] font-medium leading-[1.65] tracking-[0.01em]">
               I’m Bintar, a logo brand identity and logo designer based in Yogyakarta, Indonesia, working independently with founders, teams, and the occasional dreamer. My approach is collaborative, curious, and grounded in the belief that a strong brand should feel unmistakably yours — not like a trend report in disguise.
             </p>
             <p className="mt-8 max-w-[360px] text-sm leading-relaxed text-background/60 md:ml-auto md:mt-12">The work starts with listening closely, then finding the clearest and most honest way to make a brand recognizable.</p>
           </Reveal>
         </div>
-        <Reveal className="mt-24 grid border-t border-background/25 pt-6 md:grid-cols-3" delay="reveal-delay-3">
+        <Reveal className="mt-16 grid border-t border-background/25 pt-6 md:grid-cols-3" delay="reveal-delay-3">
           <p className="font-mono-custom text-[10px] uppercase tracking-[0.15em] text-background/55">What I do</p>
           <div className="mt-5 grid grid-cols-2 gap-y-3 text-sm font-bold md:col-span-2 md:mt-0 md:grid-cols-3">
             <span>Brand strategy</span><span>Visual identity</span><span>Logotypes</span><span>Packaging</span><span>Art direction</span><span>Digital design</span>
