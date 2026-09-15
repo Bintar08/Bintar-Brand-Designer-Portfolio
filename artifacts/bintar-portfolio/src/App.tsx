@@ -163,7 +163,7 @@ function About() {
           <p className="font-mono-custom text-[10px] uppercase tracking-[0.2em] text-background/60">01 / About me</p>
           <Asterisk className="text-accent" size={20} />
         </Reveal>
-        <div className="grid gap-14 lg:grid-cols-[minmax(260px,0.8fr)_2fr] lg:items-start lg:gap-20">
+        <div className="grid gap-14 lg:grid-cols-[minmax(260px,0.8fr)_2fr] lg:items-stretch lg:gap-20">
           <Reveal delay="reveal-delay-1">
             <p className="mb-7 max-w-[260px] font-mono-custom text-[10px] uppercase leading-[1.6] tracking-[0.15em] text-background/60">A curious eye for the details that make a thing feel like itself.</p>
             <figure className="max-w-[330px]">
@@ -181,11 +181,11 @@ function About() {
               </figcaption>
             </figure>
           </Reveal>
-          <Reveal delay="reveal-delay-2">
-            <p data-testid="text-about-copy" className="max-w-4xl font-display text-[12px] font-medium leading-[1.65] tracking-[0.01em]">
+          <Reveal delay="reveal-delay-2" className="lg:flex lg:min-h-[500px] lg:flex-col lg:justify-center">
+            <p data-testid="text-about-copy" className="max-w-[650px] font-display text-[12px] font-medium leading-[1.65] tracking-[0.01em]">
               I’m Bintar, a logo brand identity and logo designer based in Yogyakarta, Indonesia, working independently with founders, teams, and the occasional dreamer. My approach is collaborative, curious, and grounded in the belief that a strong brand should feel unmistakably yours — not like a trend report in disguise.
             </p>
-            <p className="mt-8 max-w-sm text-sm leading-relaxed text-background/60 md:ml-auto md:mt-12">The work starts with listening closely, then finding the clearest and most honest way to make a brand recognizable.</p>
+            <p className="mt-8 max-w-[360px] text-sm leading-relaxed text-background/60 md:ml-auto md:mt-12">The work starts with listening closely, then finding the clearest and most honest way to make a brand recognizable.</p>
           </Reveal>
         </div>
         <Reveal className="mt-24 grid border-t border-background/25 pt-6 md:grid-cols-3" delay="reveal-delay-3">
