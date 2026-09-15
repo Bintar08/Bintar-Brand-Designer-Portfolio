@@ -1,0 +1,28 @@
+kind = "web"
+previewPath = "/"
+title = "Bintar — Brand Identity Designer"
+description = "A bold, editorial portfolio landing page for Bintar, an independent brand identity and logo designer based in Yogyakarta, Indonesia."
+version = "1.0.0"
+id = "artifacts/bintar-portfolio"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 23964
+
+[services.development]
+run = "pnpm --filter @workspace/bintar-portfolio run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/bintar-portfolio", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/bintar-portfolio/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "23964"
+BASE_PATH = "/"
