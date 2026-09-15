@@ -182,7 +182,7 @@ function About() {
             </figure>
           </Reveal>
           <Reveal delay="reveal-delay-2">
-            <p data-testid="text-about-copy" className="max-w-4xl font-display text-[clamp(2.15rem,4.55vw,4.8rem)] font-medium leading-[1.01] tracking-[-0.065em]">
+            <p data-testid="text-about-copy" className="max-w-4xl font-display text-[clamp(1.9rem,3.75vw,4rem)] font-medium leading-[1.04] tracking-[-0.055em]">
               I’m Bintar, a logo brand identity and logo designer based in Yogyakarta, Indonesia, working independently with founders, teams, and the occasional dreamer. My approach is collaborative, curious, and grounded in the belief that a strong brand should feel unmistakably yours — not like a trend report in disguise.
             </p>
             <p className="mt-8 max-w-sm text-sm leading-relaxed text-background/60 md:ml-auto md:mt-12">The work starts with listening closely, then finding the clearest and most honest way to make a brand recognizable.</p>
