@@ -317,7 +317,7 @@ function Contact() {
             </a>
           </Reveal>
         </div>
-        <Reveal className="grid max-w-[860px] items-start gap-6 border-y border-foreground/30 py-6 md:py-8 lg:ml-auto lg:grid-cols-[160px_minmax(0,560px)] lg:gap-8" delay="reveal-delay-2">
+        <Reveal className="grid max-w-[860px] items-start gap-6 border border-foreground/30 p-4 md:p-5 lg:ml-auto lg:grid-cols-[160px_minmax(0,560px)] lg:gap-8" delay="reveal-delay-2">
           <div>
             <p className="mb-3 font-mono-custom text-[9px] uppercase tracking-[0.16em]">Client feedback</p>
             <h3 className="max-w-md font-display text-[clamp(1.5rem,3vw,2.4rem)] font-bold leading-[.9] tracking-[-.08em]">
@@ -328,7 +328,7 @@ function Contact() {
             </p>
           </div>
           {feedbackSent ? (
-            <div className="flex min-h-[160px] flex-col justify-center border border-foreground/30 p-4">
+            <div className="flex min-h-[160px] flex-col justify-center">
               <Asterisk className="mb-3 text-background" size={18} />
               <p className="font-display text-xl font-bold leading-tight tracking-[-.05em]">Thank you for your feedback.</p>
               <p className="mt-2 max-w-sm text-[11px] leading-relaxed text-foreground/75">Your response has been recorded for this session.</p>
@@ -344,7 +344,7 @@ function Contact() {
               </button>
             </div>
           ) : (
-            <form onSubmit={handleFeedbackSubmit} className="border border-foreground/30 p-3 md:p-4">
+            <form onSubmit={handleFeedbackSubmit} className="p-0">
               <div className="grid gap-3 md:grid-cols-2">
                 <label className="flex flex-col gap-1.5 text-[10px] font-bold uppercase tracking-[.08em]">
                   Your name
