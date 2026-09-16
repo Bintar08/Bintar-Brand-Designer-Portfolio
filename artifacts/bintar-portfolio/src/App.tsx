@@ -291,10 +291,17 @@ function Contact() {
     satisfaction: '',
     message: '',
   });
+  const [submittedFeedback, setSubmittedFeedback] = useState<Array<{
+    name: string;
+    company: string;
+    satisfaction: string;
+    message: string;
+  }>>([]);
   const [feedbackSent, setFeedbackSent] = useState(false);
 
   function handleFeedbackSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
+    setSubmittedFeedback((current) => [...current, feedback]);
     setFeedbackSent(true);
   }
 
@@ -317,6 +324,31 @@ function Contact() {
             </a>
           </Reveal>
         </div>
+        <Reveal className="mb-5 ml-auto max-w-[680px]" delay="reveal-delay-1">
+          <div className="mb-3 flex items-center justify-between border-b border-foreground/25 pb-3">
+            <p className="font-mono-custom text-[9px] uppercase tracking-[0.16em]">Client voices</p>
+            <span className="font-mono-custom text-[9px] uppercase tracking-[0.12em] text-foreground/60">
+              {submittedFeedback.length ? `${submittedFeedback.length} response${submittedFeedback.length > 1 ? 's' : ''}` : 'Awaiting responses'}
+            </span>
+          </div>
+          {submittedFeedback.length === 0 ? (
+            <div className="border border-dashed border-foreground/35 px-4 py-5">
+              <p className="text-xs leading-relaxed text-foreground/65">Client testimonials will appear here after feedback is submitted.</p>
+            </div>
+          ) : (
+            <div className="grid gap-3">
+              {submittedFeedback.map((item, index) => (
+                <article key={`${item.name}-${index}`} className="border border-foreground/30 bg-foreground/[0.04] p-4">
+                  <p className="font-display text-lg font-medium leading-snug tracking-[-.02em]">“{item.message}”</p>
+                  <div className="mt-4 flex flex-wrap items-center justify-between gap-2 border-t border-foreground/20 pt-3 font-mono-custom text-[9px] uppercase tracking-[.1em]">
+                    <span>{item.name}{item.company ? ` / ${item.company}` : ''}</span>
+                    <span>{item.satisfaction} / 5 satisfied</span>
+                  </div>
+                </article>
+              ))}
+            </div>
+          )}
+        </Reveal>
         <Reveal className="ml-auto max-w-[680px] border border-foreground/30 p-4 md:p-5" delay="reveal-delay-2">
           <div className="mb-4 border-b border-foreground/25 pb-4">
             <p className="mb-3 font-mono-custom text-[9px] uppercase tracking-[0.16em]">Client feedback</p>
