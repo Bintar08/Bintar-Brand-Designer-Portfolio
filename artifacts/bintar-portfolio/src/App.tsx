@@ -317,7 +317,7 @@ function Contact() {
             </a>
           </Reveal>
         </div>
-        <Reveal className="mx-auto grid max-w-[860px] items-start gap-6 border-y border-foreground/30 py-6 md:py-8 lg:grid-cols-[160px_minmax(0,560px)] lg:justify-center lg:gap-8" delay="reveal-delay-2">
+        <Reveal className="grid max-w-[860px] items-start gap-6 border-y border-foreground/30 py-6 md:py-8 lg:ml-auto lg:grid-cols-[160px_minmax(0,560px)] lg:gap-8" delay="reveal-delay-2">
           <div>
             <p className="mb-3 font-mono-custom text-[9px] uppercase tracking-[0.16em]">Client feedback</p>
             <h3 className="max-w-md font-display text-[clamp(1.5rem,3vw,2.4rem)] font-bold leading-[.9] tracking-[-.08em]">
