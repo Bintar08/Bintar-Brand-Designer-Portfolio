@@ -285,6 +285,19 @@ function Work() {
 }
 
 function Contact() {
+  const [feedback, setFeedback] = useState({
+    name: '',
+    company: '',
+    satisfaction: '',
+    message: '',
+  });
+  const [feedbackSent, setFeedbackSent] = useState(false);
+
+  function handleFeedbackSubmit(event: React.FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    setFeedbackSent(true);
+  }
+
   return (
     <section id="contact" className="relative overflow-hidden bg-accent px-5 py-24 md:px-10 md:py-36">
       <div className="pointer-events-none absolute -right-20 top-0 font-display text-[22rem] font-bold leading-none tracking-[-.18em] text-foreground/10">?</div>
@@ -304,6 +317,95 @@ function Contact() {
             </a>
           </Reveal>
         </div>
+        <Reveal className="grid gap-10 border-y border-foreground/30 py-10 md:py-14 lg:grid-cols-[.8fr_1.2fr] lg:gap-20" delay="reveal-delay-2">
+          <div>
+            <p className="mb-5 font-mono-custom text-[10px] uppercase tracking-[0.2em]">Client feedback</p>
+            <h3 className="max-w-md font-display text-[clamp(2.5rem,5vw,5rem)] font-bold leading-[.86] tracking-[-.08em]">
+              How did it <span className="text-background">feel?</span>
+            </h3>
+            <p className="mt-6 max-w-sm text-sm leading-relaxed text-foreground/75">
+              A few honest words about working together help future clients understand the process.
+            </p>
+          </div>
+          {feedbackSent ? (
+            <div className="flex min-h-[280px] flex-col justify-center border border-foreground/30 p-6 md:p-8">
+              <Asterisk className="mb-6 text-background" size={24} />
+              <p className="font-display text-3xl font-bold leading-tight tracking-[-.05em]">Thank you for sharing your experience.</p>
+              <p className="mt-4 max-w-sm text-sm leading-relaxed text-foreground/75">Your feedback has been recorded for this session.</p>
+              <button
+                type="button"
+                onClick={() => {
+                  setFeedbackSent(false);
+                  setFeedback((current) => ({ ...current, satisfaction: '', message: '' }));
+                }}
+                className="mt-7 w-fit border-b border-foreground pb-1 text-xs font-bold uppercase tracking-[.1em] hover:text-background"
+              >
+                Add another response
+              </button>
+            </div>
+          ) : (
+            <form onSubmit={handleFeedbackSubmit} className="border border-foreground/30 p-5 md:p-8">
+              <div className="grid gap-6 md:grid-cols-2">
+                <label className="flex flex-col gap-2 text-xs font-bold uppercase tracking-[.08em]">
+                  Your name
+                  <input
+                    required
+                    value={feedback.name}
+                    onChange={(event) => setFeedback({ ...feedback, name: event.target.value })}
+                    className="border-b border-foreground/40 bg-transparent px-0 py-3 text-sm font-normal normal-case tracking-normal outline-none placeholder:text-foreground/45 focus:border-foreground"
+                    placeholder="Name"
+                  />
+                </label>
+                <label className="flex flex-col gap-2 text-xs font-bold uppercase tracking-[.08em]">
+                  Company / project
+                  <input
+                    value={feedback.company}
+                    onChange={(event) => setFeedback({ ...feedback, company: event.target.value })}
+                    className="border-b border-foreground/40 bg-transparent px-0 py-3 text-sm font-normal normal-case tracking-normal outline-none placeholder:text-foreground/45 focus:border-foreground"
+                    placeholder="Optional"
+                  />
+                </label>
+              </div>
+              <fieldset className="mt-7">
+                <legend className="text-xs font-bold uppercase tracking-[.08em]">How satisfied were you?</legend>
+                <div className="mt-4 flex flex-wrap gap-2">
+                  {[1, 2, 3, 4, 5].map((rating) => (
+                    <label key={rating} className="cursor-pointer">
+                      <input
+                        required
+                        type="radio"
+                        name="satisfaction"
+                        value={rating}
+                        checked={feedback.satisfaction === String(rating)}
+                        onChange={(event) => setFeedback({ ...feedback, satisfaction: event.target.value })}
+                        className="peer sr-only"
+                      />
+                      <span className="grid h-10 w-10 place-items-center border border-foreground/40 text-sm font-bold transition-colors peer-checked:bg-foreground peer-checked:text-background peer-focus-visible:ring-2 peer-focus-visible:ring-background hover:bg-foreground/10">
+                        {rating}
+                      </span>
+                    </label>
+                  ))}
+                </div>
+                <div className="mt-2 flex justify-between font-mono-custom text-[9px] uppercase tracking-[.1em] text-foreground/60">
+                  <span>Not satisfied</span><span>Very satisfied</span>
+                </div>
+              </fieldset>
+              <label className="mt-7 flex flex-col gap-2 text-xs font-bold uppercase tracking-[.08em]">
+                Your feedback
+                <textarea
+                  required
+                  value={feedback.message}
+                  onChange={(event) => setFeedback({ ...feedback, message: event.target.value })}
+                  className="min-h-24 resize-y border-b border-foreground/40 bg-transparent px-0 py-3 text-sm font-normal normal-case leading-relaxed tracking-normal outline-none placeholder:text-foreground/45 focus:border-foreground"
+                  placeholder="What stood out about working together?"
+                />
+              </label>
+              <button type="submit" className="mt-7 inline-flex items-center gap-3 bg-foreground px-5 py-3 text-xs font-bold uppercase tracking-[.1em] text-background transition-colors hover:bg-background hover:text-foreground">
+                Send feedback <ArrowUpRight size={16} />
+              </button>
+            </form>
+          )}
+        </Reveal>
         <Reveal className="flex flex-col justify-between gap-8 border-t border-foreground/30 pt-5 text-xs md:flex-row md:items-center" delay="reveal-delay-3">
           <div className="flex gap-6">
             <a href="https://instagram.com" target="_blank" rel="noreferrer" data-testid="link-instagram" className="inline-flex items-center gap-2 font-bold uppercase tracking-[.12em] hover:underline"><Instagram size={15} /> Instagram</a>
