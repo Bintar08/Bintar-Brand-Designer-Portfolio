@@ -1,6 +1,6 @@
 import { type ReactNode, useEffect, useRef, useState } from 'react';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-import { ArrowDown, ArrowUpRight, Asterisk, Instagram, Mail, Menu, X } from 'lucide-react';
+import { ArrowDown, ArrowUpRight, Asterisk, Instagram, Mail, Menu, MessageCircle, X } from 'lucide-react';
 import profileImage from '@assets/profile_me_1789444181030.jpg';
 import { ErrorBoundary } from '@/components/error-boundary';
 import { Toaster } from '@/components/ui/toaster';
@@ -442,6 +442,7 @@ function Contact() {
           <div className="flex gap-6">
             <a href="https://instagram.com" target="_blank" rel="noreferrer" data-testid="link-instagram" className="inline-flex items-center gap-2 font-bold uppercase tracking-[.12em] hover:underline"><Instagram size={15} /> Instagram</a>
             <a href="mailto:hello@bintar.studio" data-testid="link-footer-email" className="inline-flex items-center gap-2 font-bold uppercase tracking-[.12em] hover:underline"><Mail size={15} /> Email</a>
+            <a href="https://wa.link/bkkubg" target="_blank" rel="noreferrer" data-testid="link-whatsapp" className="inline-flex items-center gap-2 font-bold uppercase tracking-[.12em] hover:underline"><MessageCircle size={15} /> WhatsApp</a>
           </div>
           <p className="font-mono-custom text-[10px] uppercase tracking-[.12em]">Yogyakarta / Indonesia / 2025</p>
           <a href="#top" data-testid="link-back-top" className="inline-flex items-center gap-2 font-mono-custom text-[10px] uppercase tracking-[.12em] hover:underline">Back to top <ArrowUpRight size={14} /></a>
