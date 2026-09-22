@@ -291,68 +291,6 @@ function Work() {
   );
 }
 
-function WhatsAppPreview() {
-  const [draft, setDraft] = useState('');
-  const [message, setMessage] = useState('[Web] Hi, Bintar');
-
-  function handleMessageSubmit(event: React.FormEvent<HTMLFormElement>) {
-    event.preventDefault();
-    const nextMessage = draft.trim();
-    if (!nextMessage) return;
-    setMessage(nextMessage);
-    setDraft('');
-  }
-
-  return (
-    <Reveal className="w-fit lg:order-1" delay="reveal-delay-2">
-      <div className="w-[220px] md:w-[245px]">
-        <div className="rounded-[1.1rem] border border-foreground/25 bg-background p-2 shadow-[0_8px_0_hsl(40_18%_9%/.12)]">
-          <div className="overflow-hidden rounded-[0.65rem] border border-foreground/10">
-            <div className="flex items-center gap-2 bg-[#eeeeec] px-3 py-3">
-              <span className="grid h-7 w-7 place-items-center rounded-full bg-background">
-                <span className="h-3.5 w-3.5 rounded-full border-2 border-foreground/20" />
-              </span>
-              <span className="text-[10px] font-medium tracking-[-.01em]">design think lab</span>
-            </div>
-            <div className="flex h-[245px] flex-col justify-end bg-[#e9e1d5] p-3 md:h-[275px]">
-              <span className="ml-auto rounded-[0.35rem] rounded-br-none bg-[#d9ffb8] px-2 py-2 text-[10px] text-foreground shadow-[0_1px_1px_hsl(40_18%_9%/.06)]">
-                {message}
-              </span>
-            </div>
-            <form onSubmit={handleMessageSubmit} className="flex items-center gap-2 bg-[#eeeeec] p-2">
-              <input
-                type="text"
-                value={draft}
-                onChange={(event) => setDraft(event.target.value)}
-                aria-label="Write a WhatsApp message"
-                placeholder="Write a message"
-                className="h-7 min-w-0 flex-1 rounded-full bg-background px-3 text-[10px] text-foreground outline-none placeholder:text-foreground/40 focus:ring-1 focus:ring-foreground/30"
-              />
-              <button
-                type="submit"
-                aria-label="Send WhatsApp message"
-                disabled={!draft.trim()}
-                className="grid h-7 w-7 shrink-0 place-items-center text-lg leading-none text-foreground/35 transition-colors hover:text-foreground disabled:cursor-not-allowed disabled:opacity-50"
-              >
-                ➤
-              </button>
-            </form>
-          </div>
-        </div>
-        <a
-          href="https://wa.link/bkkubg"
-          target="_blank"
-          rel="noreferrer"
-          data-testid="link-whatsapp-preview"
-          className="mt-3 block font-mono-custom text-[9px] uppercase tracking-[.14em] text-foreground/65 hover:text-foreground"
-        >
-          Open WhatsApp
-        </a>
-      </div>
-    </Reveal>
-  );
-}
-
 function Contact() {
   const [feedback, setFeedback] = useState({
     name: '',
@@ -418,8 +356,8 @@ function Contact() {
             </div>
           )}
         </Reveal>
-        <div className="ml-auto grid max-w-[960px] gap-6 lg:grid-cols-[245px_minmax(0,680px)] lg:items-start">
-        <Reveal className="max-w-[680px] border border-foreground/30 p-4 md:p-5 lg:order-2" delay="reveal-delay-2">
+        <div className="ml-auto max-w-[680px]">
+        <Reveal className="border border-foreground/30 p-4 md:p-5" delay="reveal-delay-2">
           <div className="mb-4 border-b border-foreground/25 pb-4">
             <p className="mb-3 font-mono-custom text-[9px] uppercase tracking-[0.16em]">Client feedback</p>
             <h3 className="max-w-md font-display text-[clamp(1.5rem,3vw,2.4rem)] font-bold leading-[.9] tracking-[-.08em]">
@@ -508,7 +446,6 @@ function Contact() {
             </form>
           )}
         </Reveal>
-        <WhatsAppPreview />
         </div>
         <Reveal className="flex flex-col justify-between gap-8 border-t border-foreground/30 pt-5 text-xs md:flex-row md:items-center" delay="reveal-delay-3">
           <div className="flex gap-6">
