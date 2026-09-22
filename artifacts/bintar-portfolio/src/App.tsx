@@ -297,7 +297,7 @@ function WhatsAppPreview() {
   }
 
   return (
-    <Reveal className="w-fit" delay="reveal-delay-2">
+    <Reveal className="w-fit lg:order-1" delay="reveal-delay-2">
       <div className="w-[220px] md:w-[245px]">
         <div className="rounded-[1.1rem] border border-foreground/25 bg-background p-2 shadow-[0_8px_0_hsl(40_18%_9%/.12)]">
           <div className="overflow-hidden rounded-[0.65rem] border border-foreground/10">
@@ -411,8 +411,8 @@ function Contact() {
             </div>
           )}
         </Reveal>
-        <div className="ml-auto grid max-w-[960px] gap-6 lg:grid-cols-[minmax(0,680px)_245px] lg:items-start">
-        <Reveal className="max-w-[680px] border border-foreground/30 p-4 md:p-5" delay="reveal-delay-2">
+        <div className="ml-auto grid max-w-[960px] gap-6 lg:grid-cols-[245px_minmax(0,680px)] lg:items-start">
+        <Reveal className="max-w-[680px] border border-foreground/30 p-4 md:p-5 lg:order-2" delay="reveal-delay-2">
           <div className="mb-4 border-b border-foreground/25 pb-4">
             <p className="mb-3 font-mono-custom text-[9px] uppercase tracking-[0.16em]">Client feedback</p>
             <h3 className="max-w-md font-display text-[clamp(1.5rem,3vw,2.4rem)] font-bold leading-[.9] tracking-[-.08em]">
