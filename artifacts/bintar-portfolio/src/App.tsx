@@ -319,8 +319,8 @@ function Contact() {
           </Reveal>
           <Reveal delay="reveal-delay-2" className="flex flex-col justify-end">
             <p className="max-w-[270px] text-sm leading-relaxed">Tell me what you’re making, where you’re at, and what you want people to feel.</p>
-            <a href="mailto:hello@bintar.studio" data-testid="link-email" className="group mt-7 flex items-center justify-between border-b-2 border-foreground py-3 text-sm font-bold">
-              hello@bintar.studio <ArrowUpRight size={19} className="transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
+            <a href="mailto:designthinklab@gmail.com" data-testid="link-email" className="group mt-7 flex items-center justify-between border-b-2 border-foreground py-3 text-sm font-bold">
+              designthinklab@gmail.com <ArrowUpRight size={19} className="transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
             </a>
           </Reveal>
         </div>
@@ -440,8 +440,8 @@ function Contact() {
         </Reveal>
         <Reveal className="flex flex-col justify-between gap-8 border-t border-foreground/30 pt-5 text-xs md:flex-row md:items-center" delay="reveal-delay-3">
           <div className="flex gap-6">
-            <a href="https://instagram.com" target="_blank" rel="noreferrer" data-testid="link-instagram" className="inline-flex items-center gap-2 font-bold uppercase tracking-[.12em] hover:underline"><Instagram size={15} /> Instagram</a>
-            <a href="mailto:hello@bintar.studio" data-testid="link-footer-email" className="inline-flex items-center gap-2 font-bold uppercase tracking-[.12em] hover:underline"><Mail size={15} /> Email</a>
+            <a href="https://instagram.com/designthink.lab" target="_blank" rel="noreferrer" data-testid="link-instagram" className="inline-flex items-center gap-2 font-bold uppercase tracking-[.12em] hover:underline"><Instagram size={15} /> @designthink.lab</a>
+            <a href="mailto:designthinklab@gmail.com" data-testid="link-footer-email" className="inline-flex items-center gap-2 font-bold uppercase tracking-[.12em] hover:underline"><Mail size={15} /> Email</a>
             <a href="https://wa.link/bkkubg" target="_blank" rel="noreferrer" data-testid="link-whatsapp" className="inline-flex items-center gap-2 font-bold uppercase tracking-[.12em] hover:underline"><MessageCircle size={15} /> WhatsApp</a>
           </div>
           <p className="font-mono-custom text-[10px] uppercase tracking-[.12em]">Yogyakarta / Indonesia / 2025</p>
