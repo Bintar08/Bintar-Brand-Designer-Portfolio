@@ -284,6 +284,42 @@ function Work() {
   );
 }
 
+function WhatsAppPreview() {
+  return (
+    <Reveal className="mt-12 w-fit md:mt-16" delay="reveal-delay-2">
+      <a
+        href="https://wa.link/bkkubg"
+        target="_blank"
+        rel="noreferrer"
+        data-testid="link-whatsapp-preview"
+        aria-label="Open WhatsApp chat with design think lab"
+        className="group block w-[220px] md:w-[245px]"
+      >
+        <div className="rounded-[1.1rem] border border-foreground/25 bg-background p-2 shadow-[0_8px_0_hsl(40_18%_9%/.12)] transition-transform duration-300 group-hover:-translate-y-1">
+          <div className="overflow-hidden rounded-[0.65rem] border border-foreground/10">
+            <div className="flex items-center gap-2 bg-[#eeeeec] px-3 py-3">
+              <span className="grid h-7 w-7 place-items-center rounded-full bg-background">
+                <span className="h-3.5 w-3.5 rounded-full border-2 border-foreground/20" />
+              </span>
+              <span className="text-[10px] font-medium tracking-[-.01em]">design think lab</span>
+            </div>
+            <div className="flex h-[245px] flex-col justify-end bg-[#e9e1d5] p-3 md:h-[275px]">
+              <span className="ml-auto rounded-[0.35rem] rounded-br-none bg-[#d9ffb8] px-2 py-2 text-[10px] text-foreground shadow-[0_1px_1px_hsl(40_18%_9%/.06)]">
+                [Web] Hi, Bintar
+              </span>
+            </div>
+            <div className="flex items-center gap-2 bg-[#eeeeec] p-2">
+              <span className="h-7 flex-1 rounded-full bg-background" />
+              <span className="grid h-7 w-7 place-items-center text-lg leading-none text-foreground/30" aria-hidden="true">➤</span>
+            </div>
+          </div>
+        </div>
+        <span className="mt-3 block font-mono-custom text-[9px] uppercase tracking-[.14em] text-foreground/65">Open WhatsApp</span>
+      </a>
+    </Reveal>
+  );
+}
+
 function Contact() {
   const [feedback, setFeedback] = useState({
     name: '',
@@ -438,6 +474,7 @@ function Contact() {
             </form>
           )}
         </Reveal>
+        <WhatsAppPreview />
         <Reveal className="flex flex-col justify-between gap-8 border-t border-foreground/30 pt-5 text-xs md:flex-row md:items-center" delay="reveal-delay-3">
           <div className="flex gap-6">
             <a href="https://instagram.com/designthink.lab" target="_blank" rel="noreferrer" data-testid="link-instagram" className="inline-flex items-center gap-2 font-bold uppercase tracking-[.12em] hover:underline"><Instagram size={15} /> @designthink.lab</a>
