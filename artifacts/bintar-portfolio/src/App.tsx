@@ -3,9 +3,6 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { ArrowDown, ArrowUpRight, Asterisk, Instagram, Mail, Menu, MessageCircle, X } from 'lucide-react';
 import profileImage from '@assets/profile_me_1789444181030.jpg';
 import aviaLogo from '@assets/Logo_Avia_Cosmetic_1790047932077.png';
-import aviaSignage from '@assets/Avia_Cosmetic_Mockup_Logo_1790047936669.png';
-import aviaLifestyle from '@assets/Avia_Cosmetic_1790047943083.jpg';
-import aviaTote from '@assets/Mockup_Tote_Bag_Avia_Cosmetic_1790047946976.png';
 import { ErrorBoundary } from '@/components/error-boundary';
 import { Toaster } from '@/components/ui/toaster';
 import { TooltipProvider } from '@/components/ui/tooltip';
@@ -209,17 +206,10 @@ function ProjectArtwork({ project }: { project: typeof projects[number] }) {
       <div className="absolute inset-0 opacity-90" />
       {project.className === 'art-avia' && (
         <>
-          <img src={aviaLifestyle} alt="" className="absolute inset-0 h-full w-full object-cover" />
-          <div className="absolute inset-0 bg-[#f6f0e6]/10" />
-          <div className="absolute left-[5%] top-[7%] h-[37%] w-[30%] overflow-hidden border-2 border-[#b75b73] bg-[#fffaf1] shadow-[8px_8px_0_hsl(40_18%_9%/.16)]">
-            <img src={aviaLogo} alt="" className="h-full w-full object-contain p-2" />
-          </div>
-          <div className="absolute right-[5%] top-[8%] h-[48%] w-[29%] overflow-hidden border-2 border-background bg-background shadow-[8px_8px_0_hsl(40_18%_9%/.16)]">
-            <img src={aviaSignage} alt="" className="h-full w-full object-cover" />
-          </div>
-          <div className="absolute bottom-[7%] left-[7%] h-[35%] w-[30%] overflow-hidden border-2 border-background bg-background shadow-[8px_8px_0_hsl(40_18%_9%/.16)]">
-            <img src={aviaTote} alt="" className="h-full w-full object-cover object-left" />
-          </div>
+          <div className="absolute inset-0 bg-[#f6f0e6]" />
+          <div className="absolute inset-[9%] rounded-full border border-[#b75b73]/45" />
+          <div className="absolute inset-[14%] rounded-full border border-foreground/25" />
+          <img src={aviaLogo} alt="Avia Cosmetic logo" className="absolute inset-[15%] h-[70%] w-[70%] object-contain mix-blend-multiply" />
           <span className="absolute bottom-[9%] right-[8%] bg-[#b75b73] px-2 py-1 font-mono-custom text-[9px] tracking-[.12em] text-background">AVIA / FORM 01</span>
         </>
       )}
