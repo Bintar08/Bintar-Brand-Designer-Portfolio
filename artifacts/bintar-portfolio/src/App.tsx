@@ -2,6 +2,10 @@ import { type ReactNode, useEffect, useRef, useState } from 'react';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { ArrowDown, ArrowUpRight, Asterisk, Instagram, Mail, Menu, MessageCircle, X } from 'lucide-react';
 import profileImage from '@assets/profile_me_1789444181030.jpg';
+import aviaLogo from '@assets/Logo_Avia_Cosmetic_1790047932077.png';
+import aviaSignage from '@assets/Avia_Cosmetic_Mockup_Logo_1790047936669.png';
+import aviaLifestyle from '@assets/Avia_Cosmetic_1790047943083.jpg';
+import aviaTote from '@assets/Mockup_Tote_Bag_Avia_Cosmetic_1790047946976.png';
 import { ErrorBoundary } from '@/components/error-boundary';
 import { Toaster } from '@/components/ui/toaster';
 import { TooltipProvider } from '@/components/ui/tooltip';
@@ -13,12 +17,12 @@ const queryClient = new QueryClient();
 const projects = [
   {
     id: '01',
-    title: 'Sora Objects',
-    type: 'Brand identity / Art direction',
-    year: '2024',
-    note: 'A warm, tactile identity for a furniture studio making fewer, better things.',
-    className: 'art-sora',
-    stamp: 'MADE TO LAST',
+    title: 'Avia Cosmetic',
+    type: 'Brand identity / Beauty Store',
+    year: '2026',
+    note: 'An elegant and beautiful brand identity for a beauty store with the slogan “Your one-stop beauty shopping center.”',
+    className: 'art-avia',
+    stamp: 'BEAUTY IN FOCUS',
   },
   {
     id: '02',
@@ -203,6 +207,22 @@ function ProjectArtwork({ project }: { project: typeof projects[number] }) {
   return (
     <div className={`project-art relative aspect-[1.15/1] w-full overflow-hidden ${project.className}`}>
       <div className="absolute inset-0 opacity-90" />
+      {project.className === 'art-avia' && (
+        <>
+          <img src={aviaLifestyle} alt="" className="absolute inset-0 h-full w-full object-cover" />
+          <div className="absolute inset-0 bg-[#f6f0e6]/10" />
+          <div className="absolute left-[5%] top-[7%] h-[37%] w-[30%] overflow-hidden border-2 border-[#b75b73] bg-[#fffaf1] shadow-[8px_8px_0_hsl(40_18%_9%/.16)]">
+            <img src={aviaLogo} alt="" className="h-full w-full object-contain p-2" />
+          </div>
+          <div className="absolute right-[5%] top-[8%] h-[48%] w-[29%] overflow-hidden border-2 border-background bg-background shadow-[8px_8px_0_hsl(40_18%_9%/.16)]">
+            <img src={aviaSignage} alt="" className="h-full w-full object-cover" />
+          </div>
+          <div className="absolute bottom-[7%] left-[7%] h-[35%] w-[30%] overflow-hidden border-2 border-background bg-background shadow-[8px_8px_0_hsl(40_18%_9%/.16)]">
+            <img src={aviaTote} alt="" className="h-full w-full object-cover object-left" />
+          </div>
+          <span className="absolute bottom-[9%] right-[8%] bg-[#b75b73] px-2 py-1 font-mono-custom text-[9px] tracking-[.12em] text-background">AVIA / FORM 01</span>
+        </>
+      )}
       {project.className === 'art-sora' && (
         <>
           <div className="absolute left-[14%] top-[13%] h-[62%] w-[70%] rotate-[-7deg] bg-[#f7e9c7] shadow-[18px_18px_0_hsl(40_18%_9%/.18)]" />
