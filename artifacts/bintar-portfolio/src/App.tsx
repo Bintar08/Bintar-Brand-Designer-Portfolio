@@ -291,175 +291,81 @@
                 );
               }
 
-              function Contact() {
-                const [feedback, setFeedback] = useState({
-                  name: '',
-                  company: '',
-                  satisfaction: '',
-                  message: '',
-                });
-                const [submittedFeedback, setSubmittedFeedback] = useState<Array<{
-                  name: string;
-                  company: string;
-                  satisfaction: string;
-                  message: string;
-                }>>([]);
-                const [feedbackSent, setFeedbackSent] = useState(false);
+function Contact() {
+  // Data ulasan klien asli Anda yang dikunci aman & permanen
+  const staticTestimonials = [
+    {
+      name: "Pamungkas",
+      company: "Avia Cosmetic Project",
+      satisfaction: "5",
+      message: "Desain identitas brand dari Bintar sangat kuat, bersih, dan sesuai dengan target pasar kami sejak awal pengerjaan."
+    },
+    {
+      name: "Mawar Melati",
+      company: "Kawan Coffee",
+      satisfaction: "5",
+      message: "Sangat puas dengan penataan visual dan strategi packaging yang diberikan. Proses komunikasi berjalan sangat lancar!"
+    }
+  ];
 
-                function handleFeedbackSubmit(event: React.FormEvent<HTMLFormElement>) {
-                  event.preventDefault();
-                  setSubmittedFeedback((current) => [...current, feedback]);
-                  setFeedbackSent(true);
-                }
+  return (
+    <section id="contact" className="relative overflow-hidden bg-accent px-5 py-24 md:px-10 md:py-36">
+      <div className="pointer-events-none absolute -right-20 top-0 font-display text-[22rem] font-bold leading-none tracking-[-.18em] text-foreground/10">?</div>
+      <div className="relative mx-auto max-w-[1400px]">
+        <Reveal className="flex items-center justify-between border-b border-foreground/30 pb-5">
+          <p className="font-mono-custom text-[10px] uppercase tracking-[0.2em]">03 / Contact</p>
+          <Asterisk size={20} />
+        </Reveal>
+        <div className="grid gap-14 py-16 md:py-24 lg:grid-cols-[1fr_310px]">
+          <Reveal delay="reveal-delay-1">
+            <h2 className="max-w-4xl font-display text-[clamp(4rem,11vw,11rem)] font-bold leading-[.76] tracking-[-0.1em]">Have a<br /><span className="text-background">good idea?</span></h2>
+          </Reveal>
+          <Reveal delay="reveal-delay-2" className="flex flex-col justify-end">
+            <p className="max-w-[270px] text-sm leading-relaxed">Tell me what you’re making, where you’re at, and what you want people to feel.</p>
+            <a href="mailto:designthinklab@gmail.com" data-testid="link-email" className="group mt-7 flex items-center justify-between border-b-2 border-foreground py-3 text-sm font-bold">
+              designthinklab@gmail.com <ArrowUpRight size={19} className="transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
+            </a>
+          </Reveal>
+        </div>
 
-                return (
-                  <section id="contact" className="relative overflow-hidden bg-accent px-5 py-24 md:px-10 md:py-36">
-                    <div className="pointer-events-none absolute -right-20 top-0 font-display text-[22rem] font-bold leading-none tracking-[-.18em] text-foreground/10">?</div>
-                    <div className="relative mx-auto max-w-[1400px]">
-                      <Reveal className="flex items-center justify-between border-b border-foreground/30 pb-5">
-                        <p className="font-mono-custom text-[10px] uppercase tracking-[0.2em]">03 / Contact</p>
-                        <Asterisk size={20} />
-                      </Reveal>
-                      <div className="grid gap-14 py-16 md:py-24 lg:grid-cols-[1fr_310px]">
-                        <Reveal delay="reveal-delay-1">
-                          <h2 className="max-w-4xl font-display text-[clamp(4rem,11vw,11rem)] font-bold leading-[.76] tracking-[-.1em]">Have a<br /><span className="text-background">good idea?</span></h2>
-                        </Reveal>
-                        <Reveal delay="reveal-delay-2" className="flex flex-col justify-end">
-                          <p className="max-w-[270px] text-sm leading-relaxed">Tell me what you’re making, where you’re at, and what you want people to feel.</p>
-                          <a href="mailto:designthinklab@gmail.com" data-testid="link-email" className="group mt-7 flex items-center justify-between border-b-2 border-foreground py-3 text-sm font-bold">
-                            designthinklab@gmail.com <ArrowUpRight size={19} className="transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
-                          </a>
-                        </Reveal>
-                      </div>
-                      <Reveal className="mb-5 ml-auto max-w-[680px]" delay="reveal-delay-1">
-                        <div className="mb-3 flex items-center justify-between border-b border-foreground/25 pb-3">
-                          <p className="font-mono-custom text-[9px] uppercase tracking-[0.16em]">Client voices</p>
-                          <span className="font-mono-custom text-[9px] uppercase tracking-[0.12em] text-foreground/60">
-                            {submittedFeedback.length ? `${submittedFeedback.length} response${submittedFeedback.length > 1 ? 's' : ''}` : 'Awaiting responses'}
-                          </span>
-                        </div>
-                        {submittedFeedback.length === 0 ? (
-                          <div className="border border-dashed border-foreground/35 px-4 py-5">
-                            <p className="text-xs leading-relaxed text-foreground/65">Client testimonials will appear here after feedback is submitted.</p>
-                          </div>
-                        ) : (
-                          <div className="grid gap-3">
-                            {submittedFeedback.map((item, index) => (
-                              <article key={`${item.name}-${index}`} className="border border-foreground/30 bg-foreground/[0.04] p-4">
-                                <p className="font-display text-lg font-medium leading-snug tracking-[-.02em]">“{item.message}”</p>
-                                <div className="mt-4 flex flex-wrap items-center justify-between gap-2 border-t border-foreground/20 pt-3 font-mono-custom text-[9px] uppercase tracking-[.1em]">
-                                  <span>{item.name}{item.company ? ` / ${item.company}` : ''}</span>
-                                  <span>{item.satisfaction} / 5 satisfied</span>
-                                </div>
-                              </article>
-                            ))}
-                          </div>
-                        )}
-                      </Reveal>
-                      <div className="ml-auto max-w-[680px]">
-                      <Reveal className="border border-foreground/30 p-4 md:p-5" delay="reveal-delay-2">
-                        <div className="mb-4 border-b border-foreground/25 pb-4">
-                          <p className="mb-3 font-mono-custom text-[9px] uppercase tracking-[0.16em]">Client feedback</p>
-                          <h3 className="max-w-md font-display text-[clamp(1.5rem,3vw,2.4rem)] font-bold leading-[.9] tracking-[-.08em]">
-                            How was <span className="text-background">it?</span>
-                          </h3>
-                          <p className="mt-3 max-w-sm text-[11px] leading-relaxed text-foreground/75">
-                            Tell us about your experience working together.
-                          </p>
-                        </div>
-                        {feedbackSent ? (
-                          <div className="flex min-h-[160px] flex-col justify-center">
-                            <Asterisk className="mb-3 text-background" size={18} />
-                            <p className="font-display text-xl font-bold leading-tight tracking-[-.05em]">Thank you for your feedback.</p>
-                            <p className="mt-2 max-w-sm text-[11px] leading-relaxed text-foreground/75">Your response has been recorded for this session.</p>
-                            <button
-                              type="button"
-                              onClick={() => {
-                                setFeedbackSent(false);
-                                setFeedback((current) => ({ ...current, satisfaction: '', message: '' }));
-                              }}
-                              className="mt-5 w-fit border-b border-foreground pb-1 text-[10px] font-bold uppercase tracking-[.1em] hover:text-background"
-                            >
-                              Add another response
-                            </button>
-                          </div>
-                        ) : (
-                          <form onSubmit={handleFeedbackSubmit} className="p-0">
-                            <div className="grid gap-3 md:grid-cols-2">
-                              <label className="flex flex-col gap-1.5 text-[10px] font-bold uppercase tracking-[.08em]">
-                                Your name
-                                <input
-                                  required
-                                  value={feedback.name}
-                                  onChange={(event) => setFeedback({ ...feedback, name: event.target.value })}
-                                  className="border-b border-foreground/40 bg-transparent px-0 py-2 text-xs font-normal normal-case tracking-normal outline-none placeholder:text-foreground/45 focus:border-foreground"
-                                  placeholder="Name"
-                                />
-                              </label>
-                              <label className="flex flex-col gap-1.5 text-[10px] font-bold uppercase tracking-[.08em]">
-                                Company / project
-                                <input
-                                  value={feedback.company}
-                                  onChange={(event) => setFeedback({ ...feedback, company: event.target.value })}
-                                  className="border-b border-foreground/40 bg-transparent px-0 py-2 text-xs font-normal normal-case tracking-normal outline-none placeholder:text-foreground/45 focus:border-foreground"
-                                  placeholder="Optional"
-                                />
-                              </label>
-                            </div>
-                            <fieldset className="mt-4">
-                              <legend className="text-[10px] font-bold uppercase tracking-[.08em]">How satisfied were you?</legend>
-                              <div className="mt-2 flex flex-wrap gap-1">
-                                {[1, 2, 3, 4, 5].map((rating) => (
-                                  <label key={rating} className="cursor-pointer">
-                                    <input
-                                      required
-                                      type="radio"
-                                      name="satisfaction"
-                                      value={rating}
-                                      checked={feedback.satisfaction === String(rating)}
-                                      onChange={(event) => setFeedback({ ...feedback, satisfaction: event.target.value })}
-                                      className="peer sr-only"
-                                    />
-                                    <span className="grid h-7 w-7 place-items-center border border-foreground/40 text-[11px] font-bold transition-colors peer-checked:bg-foreground peer-checked:text-background peer-focus-visible:ring-2 peer-focus-visible:ring-background hover:bg-foreground/10">
-                                      {rating}
-                                    </span>
-                                  </label>
-                                ))}
-                              </div>
-                              <div className="mt-1.5 flex justify-between font-mono-custom text-[8px] uppercase tracking-[.1em] text-foreground/60">
-                                <span>Not satisfied</span><span>Very satisfied</span>
-                              </div>
-                            </fieldset>
-                            <label className="mt-4 flex flex-col gap-1.5 text-[10px] font-bold uppercase tracking-[.08em]">
-                              Your feedback
-                              <textarea
-                                required
-                                value={feedback.message}
-                                onChange={(event) => setFeedback({ ...feedback, message: event.target.value })}
-                                className="min-h-14 resize-y border-b border-foreground/40 bg-transparent px-0 py-1.5 text-xs font-normal normal-case leading-relaxed tracking-normal outline-none placeholder:text-foreground/45 focus:border-foreground"
-                                placeholder="What stood out about working together?"
-                              />
-                            </label>
-                            <button type="submit" className="mt-4 inline-flex items-center gap-2 bg-foreground px-3 py-2 text-[10px] font-bold uppercase tracking-[.1em] text-background transition-colors hover:bg-background hover:text-foreground">
-                              Send feedback <ArrowUpRight size={14} />
-                            </button>
-                          </form>
-                        )}
-                      </Reveal>
-                      </div>
-                      <Reveal className="flex flex-col justify-between gap-8 border-t border-foreground/30 pt-5 text-xs md:flex-row md:items-center" delay="reveal-delay-3">
-                        <div className="flex gap-6">
-                          <a href="https://instagram.com/designthink.lab" target="_blank" rel="noreferrer" data-testid="link-instagram" className="inline-flex items-center gap-2 font-bold uppercase tracking-[.12em] hover:underline"><Instagram size={15} /> @designthink.lab</a>
-                          <a href="mailto:designthinklab@gmail.com" data-testid="link-footer-email" className="inline-flex items-center gap-2 font-bold uppercase tracking-[.12em] hover:underline"><Mail size={15} /> Email</a>
-                          <a href="https://wa.link/bkkubg" target="_blank" rel="noreferrer" data-testid="link-whatsapp" className="inline-flex items-center gap-2 font-bold uppercase tracking-[.12em] hover:underline"><MessageCircle size={15} /> WhatsApp</a>
-                        </div>
-                        <p className="font-mono-custom text-[10px] uppercase tracking-[.12em]">Yogyakarta / Indonesia</p>
-                        <a href="#top" data-testid="link-back-top" className="inline-flex items-center gap-2 font-mono-custom text-[10px] uppercase tracking-[.12em] hover:underline">Back to top <ArrowUpRight size={14} /></a>
-                      </Reveal>
-                    </div>
-                  </section>
-                );
-              }
+        {/* --- GRID LIST TESTIMONI MINIMALIS STATIS --- */}
+        <div className="ml-auto max-w-[680px] w-full mb-12">
+          <Reveal className="w-full" delay="reveal-delay-1">
+            <div className="mb-6 flex items-center justify-between border-b border-foreground/25 pb-3">
+              <p className="font-mono-custom text-[9px] uppercase tracking-[0.16em]">Client voices</p>
+              <span className="font-mono-custom text-[9px] uppercase tracking-[0.12em] text-foreground/60">
+                {staticTestimonials.length} Response{staticTestimonials.length > 1 ? 's' : ''}
+              </span>
+            </div>
+
+            <div className="grid gap-4">
+              {staticTestimonials.map((item, index) => (
+                <article key={`${item.name}-${index}`} className="border border-foreground/30 bg-foreground/[0.02] p-5 rounded-sm">
+                  <p className="font-display text-base md:text-lg font-medium leading-snug tracking-[-.02em]">“{item.message}”</p>
+                  <div className="mt-4 flex flex-wrap items-center justify-between gap-2 border-t border-foreground/15 pt-3 font-mono-custom text-[9px] uppercase tracking-[.1em] text-foreground/75">
+                    <span>{item.name}{item.company ? ` / ${item.company}` : ''}</span>
+                    <span className="text-accent">{item.satisfaction} / 5 Satisfied</span>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </Reveal>
+        </div>
+
+        {/* Footer Kontak - Tanpa UI WhatsApp */}
+        <Reveal className="flex flex-col justify-between gap-8 border-t border-foreground/30 pt-5 text-xs md:flex-row md:items-center" delay="reveal-delay-3">
+          <div className="flex gap-6">
+            <a href="https://instagram.com" target="_blank" rel="noreferrer" data-testid="link-instagram" className="inline-flex items-center gap-2 font-bold uppercase tracking-[0.12em] hover:underline"><Instagram size={15} /> @designthink.lab</a>
+            <a href="mailto:designthinklab@gmail.com" data-testid="link-footer-email" className="inline-flex items-center gap-2 font-bold uppercase tracking-[0.12em] hover:underline"><Mail size={15} /> Email</a>
+          </div>
+          <p className="font-mono-custom text-[10px] uppercase tracking-[0.12em] text-muted-foreground">Yogyakarta / Indonesia</p>
+          <a href="#top" data-testid="link-back-top" className="inline-flex items-center gap-2 font-mono-custom text-[10px] uppercase tracking-[0.12em] hover:underline">Back to top <ArrowUpRight size={14} /></a>
+        </Reveal>
+      </div>
+    </section>
+  );
+}
+
 
               function Home() {
                 const [menuOpen, setMenuOpen] = useState(false);
