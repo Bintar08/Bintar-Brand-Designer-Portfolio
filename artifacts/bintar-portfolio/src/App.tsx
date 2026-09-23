@@ -164,10 +164,10 @@ function About() {
           <p className="font-mono-custom text-[10px] uppercase tracking-[0.2em] text-background/60">01 / About me</p>
           <Asterisk className="text-accent" size={20} />
         </Reveal>
-        <div className="grid gap-12 lg:grid-cols-[260px_minmax(0,1fr)_minmax(220px,300px)] lg:items-stretch lg:gap-16">
+        <div className="grid gap-12 lg:grid-cols-[200px_minmax(0,1fr)_minmax(200px,220px)] lg:items-stretch lg:gap-8 xl:grid-cols-[260px_minmax(0,1fr)_minmax(220px,300px)] xl:gap-16">
           <Reveal delay="reveal-delay-1">
             <p className="mb-7 max-w-[260px] font-mono-custom text-[10px] uppercase leading-[1.6] tracking-[0.15em] text-background/60">A curious eye for the details that make a thing feel like itself.</p>
-            <figure className="max-w-[330px] lg:max-w-[260px]">
+            <figure className="max-w-[330px] lg:max-w-[220px] xl:max-w-[260px]">
               <div className="relative aspect-[4/5] overflow-hidden bg-background/10">
                 <img
                   src={profileImage}
@@ -183,10 +183,10 @@ function About() {
             </figure>
           </Reveal>
           <Reveal delay="reveal-delay-2">
-            <p data-testid="text-about-copy" className="mx-auto max-w-[650px] text-justify text-sm leading-relaxed text-background/60">
+            <p data-testid="text-about-copy" className="mx-auto max-w-[650px] text-left text-sm leading-relaxed text-background/60 xl:text-justify">
               Welcome to Design Think Lab by Bintar, a Yogyakarta-based creative studio. As an independent logo and brand identity designer, I partner with founders and forward-thinking teams to translate their vision into enduring visual systems.
             </p>
-            <p className="mt-8 max-w-[650px] text-justify text-sm leading-relaxed text-background/60">Guided by curiosity and collaboration, Design Think Lab rejects generic, trend-driven design. Instead, we craft authentic brand identities built to stand the test of time and truly belong to you.</p>
+            <p className="mt-8 max-w-[650px] text-left text-sm leading-relaxed text-background/60 xl:text-justify">Guided by curiosity and collaboration, Design Think Lab rejects generic, trend-driven design. Instead, we craft authentic brand identities built to stand the test of time and truly belong to you.</p>
           </Reveal>
           <Reveal delay="reveal-delay-3" className="flex items-center lg:min-h-[380px]">
             <p className="max-w-[360px] text-sm leading-relaxed text-background/60">The work starts with listening closely, then finding the clearest and most honest way to make a brand recognizable.</p>
