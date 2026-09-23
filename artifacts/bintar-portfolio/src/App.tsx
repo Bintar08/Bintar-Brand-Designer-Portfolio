@@ -139,7 +139,7 @@ function Hero() {
         <div className="relative z-10 lg:pb-8">
           <div className="reveal reveal-delay-3 ml-auto max-w-[300px] border-t border-foreground pt-5">
             <div className="mb-8 flex justify-between font-mono-custom text-[10px] uppercase tracking-[0.15em]">
-              <span>Est. 2018</span><span>Scroll to explore</span>
+              <span> </span><span>Scroll to explore</span>
             </div>
             <a href="#work" data-testid="link-hero-work" className="group inline-flex items-center gap-3 text-sm font-bold uppercase tracking-[0.08em]">
               See the work <span className="grid h-10 w-10 place-items-center bg-foreground text-background transition-colors duration-300 group-hover:bg-accent group-hover:text-foreground"><ArrowDown size={17} /></span>
@@ -174,11 +174,11 @@ function About() {
                   alt="Bintar, brand identity and logo designer based in Yogyakarta"
                   className="h-full w-full object-cover object-center grayscale-[12%] transition-transform duration-700 hover:scale-[1.03]"
                 />
-                <span className="absolute bottom-3 left-3 bg-foreground/80 px-2 py-1 font-mono-custom text-[9px] uppercase tracking-[0.15em] text-background">Bintar / Yogyakarta</span>
+                <span className="absolute bottom-3 left-3 bg-foreground/80 px-2 py-1 font-mono-custom text-[9px] uppercase tracking-[0.15em] text-background"> </span>
               </div>
               <figcaption className="mt-3 flex justify-between font-mono-custom text-[9px] uppercase tracking-[0.15em] text-background/45">
-                <span>Portrait</span>
-                <span>01—24</span>
+                <span> </span>
+                <span> </span>
               </figcaption>
             </figure>
           </Reveal>
@@ -453,7 +453,7 @@ function Contact() {
             <a href="mailto:designthinklab@gmail.com" data-testid="link-footer-email" className="inline-flex items-center gap-2 font-bold uppercase tracking-[.12em] hover:underline"><Mail size={15} /> Email</a>
             <a href="https://wa.link/bkkubg" target="_blank" rel="noreferrer" data-testid="link-whatsapp" className="inline-flex items-center gap-2 font-bold uppercase tracking-[.12em] hover:underline"><MessageCircle size={15} /> WhatsApp</a>
           </div>
-          <p className="font-mono-custom text-[10px] uppercase tracking-[.12em]">Yogyakarta / Indonesia / 2025</p>
+          <p className="font-mono-custom text-[10px] uppercase tracking-[.12em]">Yogyakarta / Indonesia</p>
           <a href="#top" data-testid="link-back-top" className="inline-flex items-center gap-2 font-mono-custom text-[10px] uppercase tracking-[.12em] hover:underline">Back to top <ArrowUpRight size={14} /></a>
         </Reveal>
       </div>
