@@ -473,7 +473,7 @@
                       <Contact />
                     </main>
                     <footer className="flex items-center justify-between bg-foreground px-5 py-5 text-background md:px-10">
-                      <span className="font-mono-custom text-[9px] uppercase tracking-[.16em] text-background/50">© Bintar studio</span>
+                      <span className="font-mono-custom text-[9px] uppercase tracking-[.16em] text-background/50">© Design Think Lab</span>
                       <span className="font-mono-custom text-[9px] uppercase tracking-[.16em] text-background/50">Built with care</span>
                     </footer>
                   </div>
