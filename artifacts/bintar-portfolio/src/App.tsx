@@ -155,6 +155,7 @@ function Hero() {
 
 function MainContent() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const mainFeaturedProject = projects[0];
 
   return (
     <div className="min-h-screen bg-background text-foreground selection:bg-accent selection:text-background antialiased">
