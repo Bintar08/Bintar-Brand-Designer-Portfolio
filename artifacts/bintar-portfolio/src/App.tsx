@@ -118,7 +118,7 @@ function Nav({ menuOpen, setMenuOpen }: { menuOpen: boolean; setMenuOpen: (open:
 
 function Hero() {
   return (
-    <section id="top" className="relative min-h-[740px] overflow-hidden bg-background px-5 pb-16 pt-32 md:min-h-[850px] md:px-10 md:pt-40">
+    <section id="top" className="relative min-h-[max(740px,100svh)] overflow-hidden bg-background px-5 pb-16 pt-32 md:min-h-[max(850px,100svh)] md:px-10 md:pt-40">
       <div className="pointer-events-none absolute left-[-8vw] top-[16%] h-[min(58vw,780px)] w-[min(58vw,780px)] rounded-full border-[1px] border-foreground/10" />
       <div className="pointer-events-none absolute left-[5vw] top-[27%] h-[min(38vw,510px)] w-[min(38vw,510px)] rounded-full border-[1px] border-foreground/10" />
       <div className="mx-auto grid max-w-[1400px] grid-cols-1 items-end gap-10 lg:grid-cols-[1fr_340px]">
@@ -158,7 +158,7 @@ function Hero() {
 
 function About() {
   return (
-    <section id="about" className="bg-foreground px-5 py-20 text-background md:px-10 md:py-24">
+    <section id="about" className="min-h-[100svh] bg-foreground px-5 py-20 text-background md:px-10 md:py-24">
       <div className="mx-auto max-w-[1400px]">
         <Reveal className="mb-12 flex items-center justify-between border-b border-background/25 pb-5">
           <p className="font-mono-custom text-[10px] uppercase tracking-[0.2em] text-background/60">01 / About me</p>
@@ -250,7 +250,7 @@ function ProjectArtwork({ project }: { project: typeof projects[number] }) {
 
 function Work() {
   return (
-    <section id="work" className="bg-background px-5 py-24 md:px-10 md:py-36">
+    <section id="work" className="min-h-[100svh] bg-background px-5 py-24 md:px-10 md:py-36">
       <div className="mx-auto max-w-[1400px]">
         <Reveal className="mb-16 flex items-end justify-between border-b border-foreground pb-5">
           <div>
