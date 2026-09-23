@@ -184,9 +184,8 @@ function About() {
           </Reveal>
           <Reveal delay="reveal-delay-2">
             <p data-testid="text-about-copy" className="mx-auto max-w-[650px] text-left text-sm leading-relaxed text-background/60 xl:text-justify">
-              Welcome to Design Think Lab by Bintar, a Yogyakarta-based creative studio. As an independent logo and brand identity designer, I partner with founders and forward-thinking teams to translate their vision into enduring visual systems.
+              Welcome to Design Think Lab by Bintar, a Yogyakarta-based creative studio. As an independent logo and brand identity designer, I partner with founders and forward-thinking teams to translate their vision into enduring visual systems. Guided by curiosity and collaboration, Design Think Lab rejects generic, trend-driven design. Instead, we craft authentic brand identities built to stand the test of time and truly belong to you.
             </p>
-            <p className="mt-8 max-w-[650px] text-left text-sm leading-relaxed text-background/60 xl:text-justify">Guided by curiosity and collaboration, Design Think Lab rejects generic, trend-driven design. Instead, we craft authentic brand identities built to stand the test of time and truly belong to you.</p>
           </Reveal>
           <Reveal delay="reveal-delay-3" className="flex items-center lg:min-h-[380px]">
             <p className="max-w-[360px] text-sm leading-relaxed text-background/60">The work starts with listening closely, then finding the clearest and most honest way to make a brand recognizable.</p>
